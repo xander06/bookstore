@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from "react";
 import { useAppContext } from "../store/Store";
+import Layout from "../components/Layout";
 
 const Create = () => {
     const [title, setTitle] = useState("");
@@ -82,7 +83,7 @@ const Create = () => {
     }
   
     return (
-      
+      <Layout>
         <form onSubmit={handleSubmit} style={inputStyles.formContainer}>
           <div style={inputStyles.container}>
             <div style={inputStyles.title}>Title</div>
@@ -109,7 +110,7 @@ const Create = () => {
           <div style={inputStyles.container}>
             <div style={inputStyles.title}>Cover</div>
             <input type="file" name="cover" onChange={handleOnChangeFile} />
-            <div>{!!cover ? <img src={cover} width="200" alt='cover' /> : ""}</div>
+            <div>{!!cover ? <img src={cover} width="200" alt="cover" /> : ""}</div>
           </div>
   
           <div style={inputStyles.container}>
@@ -160,7 +161,7 @@ const Create = () => {
             }}
           />
         </form>
-      
+        </Layout>
     );
   }
 
