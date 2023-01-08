@@ -14,13 +14,13 @@ const Homepage = () => {
 
   return (
     <Layout>
-      <div style={booksContainer}>
+      <div style={booksContainer} >
         {store.items.map((item) => (
           <Book key={item.id} item={item} />
         ))}
       </div>
     </Layout>
-  );
+  )
 }
 
 export default Homepage

@@ -19,8 +19,7 @@ const Layout = ({children}) => {
                 </Nav>
             </Navbar.Collapse>
         </Navbar>  
-                <div>{children}</div>
-            
+        <div>{children}</div>
         </div>
       );
     }

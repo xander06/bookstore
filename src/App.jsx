@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, } from 'react-router-dom';
 import './App.css';
 import Footer from './components/Footer';
 import Homepage from './pages/Homepage';
@@ -13,16 +13,19 @@ function App() {
   return (
     <div className="container">
     <Store >
+    
     <Router>
       <div className='nav-tittle'>
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/create" element={<Create />} />
-        <Route path="/view/_bookId" element={<View />} />
+        <Route path="/view/:bookId" element={<View />} />
       </Routes>
       </div>
       <Footer {...footerinfo} />
     </Router>
+    
+    
     </Store>  
   </div>
   );

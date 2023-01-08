@@ -1,101 +1,48 @@
-import React from 'react'
-import { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useState } from 'react'
 
 const AppContext = createContext({
-  items: [],
-  createItem: (item) => {},
-  getItem: (id) => {},
-  updateItem: (item) => {},
+    items: [],
+    createItem: (item) => { },
+    getItem: (id) => { },
+    updateItem: (item) => { },
 });
 
-const Store = ({ children }) =>  {
-  const [items, setItems] = useState([
-    /* {
-      id: "2ad6b5e2-9c2b-4959-b740-9335c85eed74",
-      title: "Harry Potter y el caliz de fuego",
-      author: "J.K. Rowling",
-      cover: "http://localhost:3000/img/cover01.png",
-      intro: "",
-      completed: false,
-      review: "",
-    },
-    {
-      id: "9942219d-eecc-42b5-a421-2d9b12736b76",
-      title: "Los ojos de la ciudad",
-      author: "Marcos Rivas",
-      cover: "http://localhost:3000/img/cover02.png",
-      intro: "",
-      completed: false,
-      review: "",
-    },
-    {
-      id: "9942219d-eecc-42b5-a421-2d9b12736b72",
-      title: "Los ojos de la ciudad",
-      author: "Marcos Rivas",
-      cover: "http://localhost:3000/img/cover03.png",
-      intro: "",
-      completed: false,
-      review: "",
-    },
-    {
-      id: "9942219d-eecc-42b5-a421-2d9b12736b71",
-      title: "Los ojos de la ciudad",
-      author: "Marcos Rivas",
-      cover: "http://localhost:3000/img/cover04.png",
-      intro: "",
-      completed: false,
-      review: "",
-    },
-    {
-      id: "9942219d-eecc-42b5-a421-2d9b112736b76",
-      title: "Los ojos de la ciudad",
-      author: "Marcos Rivas",
-      cover: "http://localhost:3000/img/cover05.png",
-      intro: "",
-      completed: false,
-      review: "",
-    }, */
-  ]);
+const Store = ({ children }) => {
+    const [items, setItems] = useState([]);
 
-  function createItem(item) {
-    const temp = [...items];
+    function createItem(item) {
+        const temp = [...items];
+        temp.push(item);
+        setItems([...temp]);
+    }
 
-    temp.unshift(item);
+    function getItem(id) {
+        const item = items.find((item) => item.id === id);
+        return (item);
+        
+    }
 
-    setItems([...temp]);
-  }
+    function updateItem (item){
+        const index = items.findIndex((i) => i.id === item.id);
+        const temp = [...items];
+        temp[index] = {...item};
+        return true;
+    }
 
-  function getItem(id) {
-    const item = items.find((item) => item.id === id);
-
-    return item;
-  }
-
-  function updateItem(item) {
-    const index = items.findIndex((i) => i.id === item.id);
-
-    const temp = [...items];
-
-    temp[index] = { ...item };
-
-    return true;
-  }
-
-  return (
-    <AppContext.Provider
-      value={{
-        items,
-        createItem,
-        getItem,
-        updateItem,
-      }}
-    >
-      {children}
-    </AppContext.Provider>
-  );
+    return (
+        <AppContext.Provider value={{
+            items,
+            createItem,
+            getItem,
+            updateItem,
+        }}>
+            {children}
+        </AppContext.Provider>
+    )
 }
 
-export function useAppContext() {
-  return useContext(AppContext);
+export function useAppContext(){
+    return useContext(AppContext)
 }
+
 export default Store
