@@ -1,0 +1,64 @@
+.bookContainerStyle  {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+  };
+
+.bookInfoStyle  {
+    display: flex;
+    flex-direction : column;
+    align-items: center;
+    text-align: center;
+  };
+
+  .buttonStyle {
+    padding: 15px 20px;
+    min-width: 200px;
+    border: none;
+    border-radius: 5px;
+    background-color: #1e9638;
+    color: white;
+    font-weight: bolder;
+    font-size: 18px;
+}
+
+.inputStyles .formContainer {
+      width: 400px;
+      margin: 0 auto;
+  }
+ .inputStyles .container {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      margin: 15px 0;
+  }
+
+  .inputStyles .title {
+      font-size: 16px;
+      text-align: left;
+  }
+  
+  .inputStyles .input {
+      padding: 10px;
+      border-radius: 5px;
+      font-size: 16px;
+  }
+.booksContainer {
+  display: flex;
+  flex-Wrap: wrap;
+  gap: 10px;
+  }
+
+.containervw {
+  display: flex;
+  gap: 20px;
+  color: black;
+  width: 800px;
+  margin: 0 auto;
+}
+
+.detalvw {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+}

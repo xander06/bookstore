@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { useAppContext } from '../store/Store';
-
 import Layout from '../components/Layout';
 import { useNavigate } from 'react-router-dom';
+import styles from '../components/book.module.css';
 
 const Create = () => {
     const [title, setTitle] = useState('');
@@ -15,38 +15,8 @@ const Create = () => {
     const store = useAppContext();
     const navigate = useNavigate();
 
-    const inputStyles = {
-        formContainer: {
-            width: "400px",
-            margin: "0 auto",
-        },
-        container: {
-            display: "flex",
-            flexDirection: "column",
-            gap: "5px",
-            margin: "15px 0",
-        },
-        title: {
-            fontSize: "16px",
-            textAlign: "left",
-        },
-        input: {
-            padding: "10px",
-            borderRadius: "5px",
-            fontSize: "16px",
-        },
-    };
-
-    const buttonStyle = {
-        padding: "15px 20px",
-        minWidth: "200px",
-        border: "none",
-        borderRadius: "5px",
-        backgroundColor: "#1e9638",
-        color: "white",
-        fontWeigth: "bolder",
-        fontSize: "18px",
-    }
+    
+ 
 
     function handleChange(e) {
         const name = e.target.name;
@@ -105,26 +75,26 @@ const Create = () => {
 
     return (
         <Layout>
-            <form onSubmit={handleSubmit} style={inputStyles.formContainer} >
-                <div style={inputStyles.container}>
-                    <div style={inputStyles.title} >Title</div>
-                    <input style={inputStyles.input} type='text' name='title' onChange={handleChange} value={title} />
+            <form onSubmit={handleSubmit} className={styles.formContainer} >
+                <div className= {styles.container}>
+                    <div className={styles.title} >Title</div>
+                    <input className={styles.input} type='text' name='title' onChange={handleChange} value={title} />
                 </div>
-                <div style={inputStyles.container}>
-                    <div style={inputStyles.title}>Author</div>
-                    <input style={inputStyles.input} type='text' name='author' onChange={handleChange} value={author} />
+                <div className= {styles.container}>
+                    <div className={styles.title}>Author</div>
+                    <input className={styles.input} type='text' name='author' onChange={handleChange} value={author} />
                 </div>
-                <div style={inputStyles.container} >
-                    <div style={inputStyles.title} >Cover</div>
-                    <input style={inputStyles.input} type='file' name='cover' onChange={handleFile} />
+                <div className= {styles.container} >
+                    <div className={styles.title} >Cover</div>
+                    <input className={styles.input} type='file' name='cover' onChange={handleFile} />
                     <div>{!!cover ? <img src={cover} width='200' alt='preview' /> : ''}</div>
                 </div>
-                <div style={inputStyles.container} >
-                    <div style={inputStyles.title} >Introduction</div>
-                    <input style={inputStyles.input} type='text' name='intro' onChange={handleChange} value={intro} />
+                <div className= {styles.container} >
+                    <div className={styles.title} >Introduction</div>
+                    <input className={styles.input} type='text' name='intro' onChange={handleChange} value={intro} />
                 </div>
                 <div className='completed' >
-                    <div style={inputStyles.title}>Completed</div>
+                    <div className={styles.title}>Completed</div>
                     <input
                         className='check'
                         type='checkbox'
@@ -132,13 +102,13 @@ const Create = () => {
                         onChange={handleChange}
                         value={completed} />
                 </div>
-                <div style={inputStyles.container}>
-                    <div style={inputStyles.title} >Review</div>
-                    <input style={inputStyles.input} type='text' name='review' onChange={handleChange} value={review} />
+                <div className={styles.container}>
+                    <div className={styles.title} >Review</div>
+                    <input className={styles.input} type='text' name='review' onChange={handleChange} value={review} />
                 </div>
 
                 <input
-                    style={buttonStyle}
+                    className={styles.buttonStyle}
                     type="submit"
                     value="Register Book" />
             </form>

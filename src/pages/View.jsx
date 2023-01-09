@@ -2,23 +2,14 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import Layout from '../components/Layout'
 import { useAppContext } from '../store/Store';
+import styles from '../components/book.module.css'
 
 const View = () => {
   const [item, setItem] = useState(null);
   const params = useParams();
   const store = useAppContext();
 
-  const itemStyles = {
-    container: {
-      display: "flex",
-      gap: "20px",
-      color: "white",
-      width: "800px",
-      margin: "0 auto"
-    }
-  }
-
-  useEffect(() => {
+ useEffect(() => {
     const book = store.getItem(params.bookId);
     setItem(book);
   }, [params,store]);
@@ -31,11 +22,11 @@ const View = () => {
 
   return (
     <Layout>
-      <div style={itemStyles.container}>
+      <div className={styles.containervw}>
         <div>
           <div>{item?.cover ? <img src={item?.cover} width="400" alt={item.title} /> : ''}</div>
         </div>
-        <div>
+        <div className={styles.detalvw}>
           <h2>{item?.title}</h2>
           <div>{item?.author}</div>
           <div>{item?.intro}</div>
