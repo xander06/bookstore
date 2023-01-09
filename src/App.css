@@ -4,6 +4,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Mr+Dafoe&display=swap');
 body {
   font-family: 'Montserrat', sans-serif !important;
+  background-image: url('../public/img/font.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .container {
@@ -17,7 +20,7 @@ body {
 .navbar-expand-lg .navbar-nav {
   width: 100%;
   justify-content: space-around;
-  border-bottom: 1px solid #575555;
+  border-radius: 3%;
 }
 
 .posini {
@@ -45,11 +48,12 @@ body {
 
 .navelement {
   margin: 2%;
-  color: black;
+  color: rgb(255, 255, 255);
   display: flex;
   justify-content: space-around;
   position: relative;
   text-decoration: none;
+  
 }
 
 .logo {
@@ -61,11 +65,12 @@ body {
   font-family: 'Comfortaa', cursive;
   font-weight: 400px;
   font-size: 22px;
+  color: #fdfdfd;
 }
 
 .navelementact {
   margin: 2%;
-  color: black;
+  color: rgb(182, 86, 26);
   display: flex;
   position: relative;
   justify-content: space-around;

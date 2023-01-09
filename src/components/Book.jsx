@@ -6,7 +6,7 @@ const Book = ({item}) => {
   return (
     <div className={styles.bookContainerStyle} >
         <Link className={styles.bookInfoStyle} to={`/view/${item.id}`}>
-            <img src={item.cover} alt={item.title} width = "200" />
+            <img src={item.cover} alt={item.title} width = "100%" />
             <div>{item.title}</div>
         </Link>
     </div>

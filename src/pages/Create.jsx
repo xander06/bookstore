@@ -75,7 +75,7 @@ const Create = () => {
 
     return (
         <Layout>
-            <form onSubmit={handleSubmit} className={styles.formContainer} >
+            <form onSubmit={handleSubmit} className={styles.formContainerC} >
                 <div className= {styles.container}>
                     <div className={styles.title} >Title</div>
                     <input className={styles.input} type='text' name='title' onChange={handleChange} value={title} />

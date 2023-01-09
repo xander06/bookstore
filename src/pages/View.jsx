@@ -23,15 +23,13 @@ const View = () => {
   return (
     <Layout>
       <div className={styles.containervw}>
-        <div>
-          <div>{item?.cover ? <img src={item?.cover} width="400" alt={item.title} /> : ''}</div>
-        </div>
-        <div className={styles.detalvw}>
-          <h2>{item?.title}</h2>
-          <div>{item?.author}</div>
-          <div>{item?.intro}</div>
-          <div>{item?.completed ? 'Leido' : 'Por terminar'}</div>
-          <div>{item?.review}</div>
+        {item?.cover ? <img src={item?.cover} width="50%" alt={item.title} /> : ''}
+          <div className={styles.detalvw}>
+          <h1>{item?.title}</h1>
+          <div>Autor: {item?.author}</div>
+          <div>Introducción: {item?.intro}</div>
+          <div>Leido? {item?.completed ? 'Leido' : 'Por terminar'}</div>
+          <div>Revision {item?.review}</div>
         </div>
       </div>
     </Layout>

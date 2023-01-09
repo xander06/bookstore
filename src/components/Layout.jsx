@@ -7,7 +7,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 const Layout = ({children}) => {
     return (
         <div>
-        <Navbar collapseOnSelect expand="lg" variant="light">
+        <Navbar collapseOnSelect expand="lg bg-dark" variant="light">
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="mr-auto">
