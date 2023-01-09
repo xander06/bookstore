@@ -23,7 +23,7 @@ const View = () => {
   return (
     <Layout>
       <div className={styles.containervw}>
-        {item?.cover ? <img src={item?.cover} width="25%" alt={item.title} /> : ''}
+        {item?.cover ? <img src={item?.cover} width="300px" alt={item.title} /> : ''}
           <div className={styles.detalvw}>
           <h1>{item?.title}</h1>
           <div>Autor: {item?.author}</div>
