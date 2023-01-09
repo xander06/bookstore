@@ -3,7 +3,7 @@
 
 - In this repository you can  see 5  app  with  react Hooks  and  use States, developer with con React, in the "[Kruger Start](https://www.youtube.com/@KrugerCorp)   "
 
-<img src='./public/img/screen.jpg'>
+<img src='./public/img/screen.png'>
 
 ## Built With 👣👍🧑‍🏫
 
