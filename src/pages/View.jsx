@@ -21,7 +21,7 @@ const View = () => {
   useEffect(() => {
     const book = store.getItem(params.bookId);
     setItem(book);
-  }, []);
+  }, [params,store]);
 
   if (!item) {
     return (
