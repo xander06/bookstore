@@ -67,6 +67,7 @@
 .booksContainer {
   display: flex;
   margin: 1%;
+  flex-flow: row wrap
  }
 
 .containervw {
